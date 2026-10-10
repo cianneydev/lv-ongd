@@ -12,18 +12,19 @@
 
 <header>
     <nav>
-        <a href="index.html">
-            <img src="assets/images/logo.png" alt="Logo LV/ONGD" class="logo">
-        </a>
-        <ul>
-            <li><a href="index.html">Accueil</a></li>
-            <li><a href="qui-sommes-nous.html">Qui sommes-nous ?</a></li>
-            <li><a href="nos-actions.html">Nos Actions</a></li>
-            <li><a href="nous-soutenir.html">Nous Soutenir</a></li>
-            <li><a href="faq.html">FAQ</a></li>
-            <li><a href="contact.html">Contact</a></li>
-        </ul>
-    </nav>
+    <a href="index.html">
+        <img src="assets/images/logo.png" alt="Logo LV/ONGD" class="logo">
+    </a>
+    <button class="menu-toggle" onclick="toggleMenu()" aria-label="Menu">☰</button>
+    <ul id="menu">
+        <li><a href="index.html">Accueil</a></li>
+        <li><a href="qui-sommes-nous.html">Qui sommes-nous ?</a></li>
+        <li><a href="nos-actions.html">Nos Actions</a></li>
+        <li><a href="nous-soutenir.html">Nous Soutenir</a></li>
+        <li><a href="faq.html">FAQ</a></li>
+        <li><a href="contact.html">Contact</a></li>
+    </ul>
+        </nav>
 </header>
 
 <section class="hero">
@@ -81,6 +82,11 @@
     </div>
     <p class="copyright">© 2026 ONG Lamentation Végétale. Tous droits réservés.</p>
 </footer>
+    <script>
+function toggleMenu() {
+    document.getElementById('menu').classList.toggle('active');
+}
+                                                              </script>
 
 </body>
 </html>
