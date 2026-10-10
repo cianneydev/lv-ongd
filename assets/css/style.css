@@ -720,6 +720,59 @@ footer a:hover {
 .card {
     animation: fadeIn 0.6s ease-out;
 }
+/* --------------------------------------------
+   BOÎTE DE DON / BÉNÉVOLAT / PARTENARIAT
+   -------------------------------------------- */
+.don-box {
+    background: var(--gris-clair);
+    padding: 2rem;
+    border-radius: var(--radius);
+    margin: 1.5rem 0;
+    border-left: 5px solid var(--vert);
+}
+
+.don-box h4 {
+    color: var(--bleu-fonce);
+    font-size: 1.2rem;
+    margin-bottom: 1rem;
+}
+
+.don-box p {
+    margin-bottom: 0.5rem;
+    text-align: left;
+}
+
+.don-box ul {
+    margin-left: 1.5rem;
+    margin-bottom: 1.5rem;
+}
+
+.don-box li {
+    margin-bottom: 0.5rem;
+}
+
+.don-box .btn-primary {
+    margin-top: 1rem;
+}
+
+.share-box {
+    background: var(--bleu-fonce);
+    color: var(--blanc);
+    padding: 1.5rem;
+    border-radius: var(--radius);
+    text-align: center;
+    margin: 1.5rem 0;
+}
+
+.share-box a {
+    color: var(--blanc);
+    text-decoration: underline;
+    font-weight: bold;
+}
+
+.share-box a:hover {
+    color: #FFD700;
+   }
 
 /* --------------------------------------------
    FIN DU FICHIER
