@@ -163,6 +163,19 @@ nav a.active::after {
     margin-bottom: 0.5rem;
     line-height: 1.2;
 }
+/* Logo géant sur la page d'accueil */
+.hero-logo {
+    width: 150px;
+    height: 150px;
+    margin: 0 auto 1.5rem;
+    border-radius: 50%;
+    border: 5px solid var(--vert-fonce);
+    padding: 8px;
+    background: var(--blanc);
+    box-shadow: 0 8px 25px rgba(46, 125, 50, 0.3);
+    object-fit: contain;
+    animation: fadeIn 1s ease-out;
+}
 
 .devise {
     font-size: 1.4rem;
@@ -883,6 +896,11 @@ footer a:hover {
     .hero h1 {
         font-size: 1.6rem;
     }
+   .hero-logo {
+    width: 110px;
+    height: 110px;
+    border-width: 4px;
+}
     
     .devise {
         font-size: 1rem;
