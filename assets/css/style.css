@@ -83,9 +83,22 @@ nav {
     flex-wrap: wrap;
 }
 
+/* Logo avec bordure circulaire */
 .logo {
-    height: 55px;
-    width: auto;
+    height: 80px;
+    width: 80px;
+    border-radius: 50%;
+    border: 3px solid var(--vert-fonce);
+    padding: 5px;
+    background: var(--blanc);
+    box-shadow: 0 3px 10px rgba(46, 125, 50, 0.25);
+    transition: var(--transition);
+    object-fit: contain;
+}
+
+.logo:hover {
+    transform: scale(1.05);
+    box-shadow: 0 5px 20px rgba(46, 125, 50, 0.4);
 }
 
 .menu-toggle {
@@ -732,8 +745,9 @@ footer a:hover {
     }
     
     .logo {
-        height: 45px;
-    }
+    height: 65px;
+    width: 65px;
+}
     
     .menu-toggle {
         display: block;
