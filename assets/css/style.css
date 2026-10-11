@@ -1,22 +1,25 @@
 /* ============================================
    ONG LAMENTATION VÉGÉTALE (LV/ONGD)
-   Feuille de style principale
+   Feuille de style unifiée - Version Pro
    ============================================ */
 
 /* --------------------------------------------
-   1. VARIABLES GLOBALES
+   1. VARIABLES
    -------------------------------------------- */
 :root {
-    --bleu-fonce: #1E5AA8;
-    --bleu-clair: #4A90D9;
-    --vert: #2E7D32;
-    --vert-fonce: #1B5E20;
+    --vert-fonce: #2E7D32;
+    --vert-principal: #2E7D32;
+    --vert-moyen: #43A047;
+    --vert-clair: #4CAF50;
+    --vert-tres-clair: #E8F5E9;
+    --marron: #5D4037;
+    --bleu: #1565C0;
     --blanc: #FFFFFF;
-    --gris-clair: #F5F5F5;
+    --gris: #F5F5F5;
     --gris-moyen: #E0E0E0;
     --texte: #333333;
     --texte-clair: #666666;
-    --ombre: 0 2px 5px rgba(0,0,0,0.1);
+    --ombre: 0 2px 8px rgba(0,0,0,0.08);
     --ombre-forte: 0 4px 15px rgba(0,0,0,0.15);
     --radius: 10px;
     --transition: all 0.3s ease;
@@ -36,10 +39,11 @@ html {
 }
 
 body {
-    font-family: 'Open Sans', 'Segoe UI', Arial, sans-serif;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     color: var(--texte);
     line-height: 1.6;
     background: var(--blanc);
+    overflow-x: hidden;
 }
 
 img {
@@ -49,17 +53,17 @@ img {
 }
 
 a {
-    color: var(--bleu-fonce);
+    color: var(--vert-fonce);
     text-decoration: none;
     transition: var(--transition);
 }
 
 a:hover {
-    color: var(--vert);
+    color: var(--vert-clair);
 }
 
 /* --------------------------------------------
-   3. EN-TÊTE & NAVIGATION
+   3. EN-TÊTE
    -------------------------------------------- */
 header {
     background: var(--blanc);
@@ -70,152 +74,194 @@ header {
 }
 
 nav {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 1rem 2rem;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 1rem 2rem;
-    max-width: 1200px;
-    margin: 0 auto;
+    flex-wrap: wrap;
 }
 
 .logo {
-    height: 60px;
+    height: 55px;
     width: auto;
+}
+
+.menu-toggle {
+    display: none;
+    background: none;
+    border: none;
+    font-size: 1.8rem;
+    color: var(--vert-fonce);
+    cursor: pointer;
+    padding: 0.5rem;
 }
 
 nav ul {
     display: flex;
     list-style: none;
-    gap: 2rem;
+    gap: 1.5rem;
+    align-items: center;
 }
 
 nav a {
     text-decoration: none;
-    color: var(--bleu-fonce);
-    font-weight: 600;
-    font-size: 1rem;
+    color: var(--texte);
+    font-weight: 500;
+    font-size: 0.95rem;
     padding: 0.5rem 0;
     position: relative;
     transition: var(--transition);
 }
 
-nav a:hover {
-    color: var(--vert);
+nav a:hover,
+nav a.active {
+    color: var(--vert-fonce);
 }
 
-nav a::after {
+nav a.active::after {
     content: '';
     position: absolute;
     bottom: 0;
     left: 0;
-    width: 0;
-    height: 2px;
-    background: var(--vert);
-    transition: width 0.3s;
-}
-
-nav a:hover::after {
     width: 100%;
+    height: 2px;
+    background: var(--vert-fonce);
 }
 
 /* --------------------------------------------
    4. BANNIÈRE (HERO)
    -------------------------------------------- */
 .hero {
-    background: linear-gradient(135deg, var(--bleu-fonce), var(--vert));
-    color: var(--blanc);
-    padding: 6rem 2rem;
+    background: linear-gradient(135deg, var(--vert-tres-clair) 0%, #C8E6C9 100%);
+    padding: 5rem 2rem;
     text-align: center;
 }
 
+.hero-content {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
 .hero h1 {
-    font-size: 3rem;
-    margin-bottom: 1rem;
-    font-weight: 800;
+    font-size: 2.8rem;
+    color: var(--vert-fonce);
+    margin-bottom: 0.5rem;
+    line-height: 1.2;
 }
 
 .devise {
-    font-size: 1.5rem;
-    font-weight: bold;
+    font-size: 1.4rem;
+    color: var(--marron);
     margin-bottom: 1rem;
-    letter-spacing: 2px;
+    font-weight: 600;
 }
 
 .slogan {
-    font-size: 1.2rem;
+    font-size: 1.1rem;
+    color: #444;
     margin-bottom: 2rem;
     max-width: 700px;
     margin-left: auto;
     margin-right: auto;
 }
 
+.hero-buttons {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
 /* --------------------------------------------
-   5. BOUTONS
+   5. PAGE HEADER (pages internes)
+   -------------------------------------------- */
+.page-header {
+    background: linear-gradient(135deg, var(--vert-fonce), var(--vert-moyen));
+    color: var(--blanc);
+    padding: 4rem 2rem;
+    text-align: center;
+}
+
+.page-header h1 {
+    font-size: 2.2rem;
+    margin-bottom: 0.5rem;
+    font-weight: 800;
+}
+
+.page-header p {
+    font-size: 1.1rem;
+    opacity: 0.95;
+}
+
+/* --------------------------------------------
+   6. BOUTONS
    -------------------------------------------- */
 .btn-primary {
     display: inline-block;
-    background: var(--vert);
+    background: var(--vert-fonce);
     color: var(--blanc);
-    padding: 1rem 2rem;
+    padding: 0.9rem 2rem;
     border-radius: var(--radius);
     text-decoration: none;
-    font-weight: bold;
+    font-weight: 600;
     transition: var(--transition);
-    border: 2px solid var(--vert);
+    border: 2px solid var(--vert-fonce);
     cursor: pointer;
     font-size: 1rem;
 }
 
 .btn-primary:hover {
-    background: var(--vert-fonce);
-    border-color: var(--vert-fonce);
+    background: #1B5E20;
+    border-color: #1B5E20;
+    color: var(--blanc);
     transform: translateY(-2px);
     box-shadow: var(--ombre-forte);
-    color: var(--blanc);
 }
 
 .btn-secondary {
     display: inline-block;
-    background: transparent;
-    color: var(--blanc);
-    border: 2px solid var(--blanc);
-    padding: 1rem 2rem;
+    background: var(--blanc);
+    color: var(--vert-fonce);
+    border: 2px solid var(--vert-fonce);
+    padding: 0.9rem 2rem;
     border-radius: var(--radius);
     text-decoration: none;
-    font-weight: bold;
+    font-weight: 600;
     transition: var(--transition);
     cursor: pointer;
     font-size: 1rem;
 }
 
 .btn-secondary:hover {
-    background: var(--blanc);
-    color: var(--bleu-fonce);
+    background: var(--vert-fonce);
+    color: var(--blanc);
     transform: translateY(-2px);
 }
 
 .btn-outline {
     display: inline-block;
     background: transparent;
-    color: var(--bleu-fonce);
-    border: 2px solid var(--bleu-fonce);
-    padding: 1rem 2rem;
+    color: var(--vert-fonce);
+    border: 2px solid var(--vert-fonce);
+    padding: 0.9rem 2rem;
     border-radius: var(--radius);
     text-decoration: none;
-    font-weight: bold;
+    font-weight: 600;
     transition: var(--transition);
     cursor: pointer;
     font-size: 1rem;
 }
 
 .btn-outline:hover {
-    background: var(--bleu-fonce);
+    background: var(--vert-fonce);
     color: var(--blanc);
     transform: translateY(-2px);
 }
 
 /* --------------------------------------------
-   6. SECTIONS GÉNÉRALES
+   7. SECTIONS
    -------------------------------------------- */
 section {
     padding: 4rem 2rem;
@@ -225,31 +271,18 @@ section {
 
 section h2 {
     font-size: 2rem;
-    color: var(--bleu-fonce);
+    color: var(--vert-fonce);
     margin-bottom: 2rem;
     text-align: center;
+    line-height: 1.3;
 }
 
-/* --------------------------------------------
-   7. PAGE HEADER (pour pages internes)
-   -------------------------------------------- */
-.page-header {
-    background: linear-gradient(135deg, var(--bleu-fonce), var(--vert));
-    color: var(--blanc);
-    padding: 4rem 2rem;
+.intro-text {
     text-align: center;
-    max-width: 100%;
-}
-
-.page-header h1 {
-    font-size: 2.5rem;
-    margin-bottom: 0.5rem;
-    font-weight: 800;
-}
-
-.page-header p {
-    font-size: 1.2rem;
-    opacity: 0.95;
+    max-width: 800px;
+    margin: 0 auto 2rem;
+    font-size: 1.1rem;
+    color: #444;
 }
 
 /* --------------------------------------------
@@ -262,30 +295,29 @@ section h2 {
 }
 
 .content h2 {
-    color: var(--bleu-fonce);
+    color: var(--vert-fonce);
     margin-top: 2rem;
     margin-bottom: 1rem;
-    font-size: 1.8rem;
+    font-size: 1.7rem;
     text-align: left;
-    border-bottom: 3px solid var(--vert);
+    border-bottom: 3px solid var(--vert-fonce);
     padding-bottom: 0.5rem;
 }
 
 .content h3 {
-    color: var(--vert);
+    color: var(--vert-moyen);
     margin-top: 1.5rem;
     margin-bottom: 0.5rem;
-    font-size: 1.3rem;
+    font-size: 1.2rem;
 }
 
 .content p {
     margin-bottom: 1rem;
-    text-align: justify;
     font-size: 1.05rem;
 }
 
 .content ul {
-    margin-left: 2rem;
+    margin-left: 1.5rem;
     margin-bottom: 1.5rem;
 }
 
@@ -295,83 +327,78 @@ section h2 {
 }
 
 /* --------------------------------------------
-   9. CITATION (BLOCKQUOTE)
+   9. BLOCKQUOTE
    -------------------------------------------- */
 blockquote {
-    background: var(--gris-clair);
-    border-left: 5px solid var(--vert);
-    padding: 1.5rem;
+    background: var(--vert-tres-clair);
+    border-left: 5px solid var(--vert-fonce);
+    padding: 1.2rem;
     margin: 1.5rem 0;
     font-style: italic;
-    font-size: 1.2rem;
-    color: var(--bleu-fonce);
+    font-size: 1.1rem;
+    color: var(--vert-fonce);
     border-radius: 0 var(--radius) var(--radius) 0;
 }
 
 /* --------------------------------------------
-   10. BOÎTE DEVISE
+   10. CARTES (MVV + Domaines)
    -------------------------------------------- */
-.devise-box {
-    background: var(--gris-clair);
-    padding: 2rem;
-    border-radius: var(--radius);
-    text-align: center;
-    margin: 2rem 0;
-    border: 2px solid var(--vert);
-}
-
-.devise-box h3 {
-    color: var(--bleu-fonce);
-    font-size: 1.5rem;
-    margin-bottom: 1rem;
-    letter-spacing: 2px;
-}
-
-.devise-box p {
-    text-align: center;
-    margin-bottom: 0.5rem;
-}
-
-/* --------------------------------------------
-   11. CARTES (Domaines d'intervention)
-   -------------------------------------------- */
+.mvv-container,
 .cards {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
     gap: 2rem;
+    margin-top: 2rem;
 }
 
+.mvv-card,
 .card {
-    background: var(--gris-clair);
+    background: var(--gris);
     padding: 2rem;
     border-radius: var(--radius);
     text-align: center;
     transition: var(--transition);
-    border-bottom: 4px solid var(--vert);
+    border-bottom: 4px solid var(--vert-fonce);
 }
 
+.mvv-card:hover,
 .card:hover {
     transform: translateY(-5px);
     box-shadow: var(--ombre-forte);
     background: var(--blanc);
 }
 
+.mvv-card h3,
 .card h3 {
-    color: var(--bleu-fonce);
-    font-size: 1.2rem;
-    margin-bottom: 0.5rem;
+    color: var(--vert-fonce);
+    margin-bottom: 1rem;
+    font-size: 1.15rem;
+    line-height: 1.3;
 }
 
+.mvv-card p,
 .card p {
     color: var(--texte-clair);
     font-size: 0.95rem;
 }
 
+/* Section domaines avec fond */
+.domaines {
+    background: var(--vert-tres-clair);
+    max-width: 100%;
+    padding: 4rem 2rem;
+}
+
+.domaines .cards {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
 /* --------------------------------------------
-   12. APPEL À L'ACTION (CTA)
+   11. CTA
    -------------------------------------------- */
 .cta {
-    background: var(--bleu-fonce);
+    background: var(--vert-fonce);
     color: var(--blanc);
     text-align: center;
     border-radius: var(--radius);
@@ -382,15 +409,234 @@ blockquote {
 
 .cta h2 {
     color: var(--blanc);
-    margin-bottom: 1.5rem;
+    margin-bottom: 1rem;
 }
 
-.cta a {
-    margin: 0.5rem;
+.cta p {
+    font-size: 1.1rem;
+    margin-bottom: 2rem;
+    max-width: 700px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.cta .btn-primary {
+    background: var(--blanc);
+    color: var(--vert-fonce);
+    border-color: var(--blanc);
+}
+
+.cta .btn-primary:hover {
+    background: #F0F0F0;
+    border-color: #F0F0F0;
+    color: var(--vert-fonce);
+}
+
+.cta .btn-secondary {
+    background: transparent;
+    color: var(--blanc);
+    border-color: var(--blanc);
+}
+
+.cta .btn-secondary:hover {
+    background: var(--blanc);
+    color: var(--vert-fonce);
 }
 
 /* --------------------------------------------
-   13. GALERIE PHOTOS
+   12. CONTACT
+   -------------------------------------------- */
+.contact-info {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 1.5rem;
+    margin: 2rem 0;
+}
+
+.contact-card {
+    background: var(--gris);
+    padding: 1.5rem;
+    border-radius: var(--radius);
+    text-align: center;
+    border-top: 4px solid var(--vert-fonce);
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+}
+
+.contact-card h3 {
+    color: var(--vert-fonce);
+    margin-bottom: 1rem;
+    font-size: 1.1rem;
+}
+
+.contact-card p {
+    margin-bottom: 0.5rem;
+    font-size: 0.95rem;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+}
+
+.contact-card a {
+    color: var(--vert-fonce);
+    font-weight: 600;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+}
+
+/* --------------------------------------------
+   13. FORMULAIRES
+   -------------------------------------------- */
+form {
+    max-width: 600px;
+    margin: 2rem auto;
+    padding: 2rem;
+    background: var(--gris);
+    border-radius: var(--radius);
+}
+
+form label {
+    display: block;
+    margin-bottom: 0.5rem;
+    color: var(--vert-fonce);
+    font-weight: 600;
+    font-size: 0.95rem;
+}
+
+form input,
+form textarea,
+form select {
+    width: 100%;
+    padding: 0.8rem;
+    margin-bottom: 1rem;
+    border: 2px solid var(--gris-moyen);
+    border-radius: 5px;
+    font-size: 1rem;
+    font-family: inherit;
+    transition: var(--transition);
+    background: var(--blanc);
+}
+
+form input:focus,
+form textarea:focus,
+form select:focus {
+    outline: none;
+    border-color: var(--vert-fonce);
+    box-shadow: 0 0 0 3px rgba(46, 125, 50, 0.1);
+}
+
+form textarea {
+    min-height: 150px;
+    resize: vertical;
+}
+
+form button {
+    width: 100%;
+    margin-top: 0.5rem;
+}
+
+/* --------------------------------------------
+   14. FAQ
+   -------------------------------------------- */
+.faq-item {
+    background: var(--gris);
+    border-radius: var(--radius);
+    margin-bottom: 1rem;
+    overflow: hidden;
+    border-left: 5px solid var(--vert-fonce);
+    transition: var(--transition);
+}
+
+.faq-item:hover {
+    box-shadow: var(--ombre);
+}
+
+.faq-question {
+    padding: 1.2rem;
+    font-weight: 700;
+    color: var(--vert-fonce);
+    cursor: pointer;
+    font-size: 1rem;
+    line-height: 1.4;
+}
+
+.faq-question:hover {
+    background: var(--gris-moyen);
+}
+
+.faq-answer {
+    padding: 0 1.2rem 1.2rem;
+    color: var(--texte);
+    font-size: 0.95rem;
+    line-height: 1.7;
+    display: none;
+}
+
+.faq-item:hover .faq-answer {
+    display: block;
+}
+
+/* --------------------------------------------
+   15. BOÎTES DON / BÉNÉVOLAT / PARTENARIAT
+   -------------------------------------------- */
+.don-box {
+    background: var(--gris);
+    padding: 1.5rem;
+    border-radius: var(--radius);
+    margin: 1.5rem 0;
+    border-left: 5px solid var(--vert-fonce);
+}
+
+.don-box h4 {
+    color: var(--vert-fonce);
+    font-size: 1.1rem;
+    margin-bottom: 1rem;
+}
+
+.don-box p {
+    margin-bottom: 0.5rem;
+    text-align: left;
+    font-size: 0.95rem;
+}
+
+.don-box ul {
+    margin-left: 1.2rem;
+    margin-bottom: 1.5rem;
+}
+
+.don-box li {
+    margin-bottom: 0.5rem;
+    font-size: 0.95rem;
+}
+
+.don-box .btn-primary {
+    margin-top: 1rem;
+}
+
+.share-box {
+    background: var(--vert-fonce);
+    color: var(--blanc);
+    padding: 1.5rem;
+    border-radius: var(--radius);
+    text-align: center;
+    margin: 1.5rem 0;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+}
+
+.share-box a {
+    color: var(--blanc);
+    text-decoration: underline;
+    font-weight: bold;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+}
+
+.share-box a:hover {
+    color: #C8E6C9;
+}
+
+/* --------------------------------------------
+   16. GALERIE
    -------------------------------------------- */
 .galerie {
     display: grid;
@@ -414,181 +660,70 @@ blockquote {
 }
 
 /* --------------------------------------------
-   14. FORMULAIRES
-   -------------------------------------------- */
-form {
-    max-width: 600px;
-    margin: 2rem auto;
-    padding: 2rem;
-    background: var(--gris-clair);
-    border-radius: var(--radius);
-}
-
-form label {
-    display: block;
-    margin-bottom: 0.5rem;
-    color: var(--bleu-fonce);
-    font-weight: 600;
-}
-
-form input,
-form textarea,
-form select {
-    width: 100%;
-    padding: 0.8rem;
-    margin-bottom: 1rem;
-    border: 2px solid var(--gris-moyen);
-    border-radius: 5px;
-    font-size: 1rem;
-    font-family: inherit;
-    transition: var(--transition);
-}
-
-form input:focus,
-form textarea:focus,
-form select:focus {
-    outline: none;
-    border-color: var(--vert);
-    box-shadow: 0 0 0 3px rgba(46, 125, 50, 0.1);
-}
-
-form textarea {
-    min-height: 150px;
-    resize: vertical;
-}
-
-form button {
-    width: 100%;
-    margin-top: 0.5rem;
-}
-
-/* --------------------------------------------
-   15. FAQ (Accordéon)
-   -------------------------------------------- */
-.faq-item {
-    background: var(--gris-clair);
-    border-radius: var(--radius);
-    margin-bottom: 1rem;
-    overflow: hidden;
-    border-left: 5px solid var(--vert);
-}
-
-.faq-question {
-    padding: 1.5rem;
-    font-weight: 700;
-    color: var(--bleu-fonce);
-    cursor: pointer;
-    font-size: 1.1rem;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    transition: var(--transition);
-}
-
-.faq-question:hover {
-    background: var(--gris-moyen);
-}
-
-.faq-answer {
-    padding: 0 1.5rem 1.5rem;
-    color: var(--texte);
-    font-size: 1rem;
-    line-height: 1.7;
-}
-
-/* --------------------------------------------
-   16. CONTACT INFO
-   -------------------------------------------- */
-.contact-info {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 2rem;
-    margin: 2rem 0;
-}
-
-.contact-card {
-    background: var(--gris-clair);
-    padding: 2rem;
-    border-radius: var(--radius);
-    text-align: center;
-    border-top: 4px solid var(--vert);
-}
-
-.contact-card h3 {
-    color: var(--bleu-fonce);
-    margin-bottom: 1rem;
-}
-
-.contact-card p {
-    color: var(--texte);
-    margin-bottom: 0.5rem;
-}
-
-.contact-card a {
-    color: var(--vert);
-    font-weight: 600;
-}
-
-/* --------------------------------------------
    17. PIED DE PAGE
    -------------------------------------------- */
 footer {
-    background: #1a1a1a;
+    background: #1b3a1c;
     color: var(--blanc);
-    padding: 3rem 2rem 1rem;
+    padding: 3rem 2rem 1.5rem;
     margin-top: 4rem;
 }
 
 .footer-content {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 2rem;
     max-width: 1200px;
     margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 2rem;
+    margin-bottom: 2rem;
 }
 
 footer h3 {
-    color: var(--vert);
+    color: #A5D6A7;
     margin-bottom: 1rem;
-    font-size: 1.2rem;
+    font-size: 1.1rem;
 }
 
 footer p {
     margin-bottom: 0.5rem;
     color: #CCCCCC;
-    font-size: 0.95rem;
+    font-size: 0.9rem;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
 }
 
 footer a {
-    color: var(--vert);
+    color: #CCCCCC;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    display: block;
+    margin-bottom: 0.3rem;
 }
 
 footer a:hover {
-    color: var(--bleu-clair);
+    color: var(--blanc);
 }
 
 .copyright {
     text-align: center;
     margin-top: 2rem;
-    padding-top: 1rem;
-    border-top: 1px solid #333;
-    color: #999999;
-    font-size: 0.9rem;
-}
-/* Bouton hamburger - caché sur PC */
-.menu-toggle {
-    display: none;
-    background: none;
-    border: none;
-    font-size: 1.8rem;
-    color: var(--bleu-fonce);
-    cursor: pointer;
-    padding: 0.5rem;
-    line-height: 1;
+    padding-top: 1.5rem;
+    border-top: 1px solid #2c522e;
+    color: #888;
+    font-size: 0.85rem;
 }
 
 /* --------------------------------------------
-   18. RESPONSIVE (Mobile & Tablette)
+   18. UTILITAIRES
+   -------------------------------------------- */
+.text-center { text-align: center; }
+.mt-1 { margin-top: 1rem; }
+.mt-2 { margin-top: 2rem; }
+.mb-1 { margin-bottom: 1rem; }
+.mb-2 { margin-bottom: 2rem; }
+
+/* --------------------------------------------
+   19. RESPONSIVE - TABLETTE
    -------------------------------------------- */
 @media (max-width: 768px) {
     nav {
@@ -637,7 +772,7 @@ footer a:hover {
         font-size: 1rem;
     }
     
-    nav a::after {
+    nav a.active::after {
         display: none;
     }
     
@@ -685,30 +820,37 @@ footer a:hover {
         padding: 2rem 1.2rem;
     }
     
-    .cta a {
-        display: block;
-        margin: 0.5rem 0;
+    .cta h2 {
+        font-size: 1.3rem;
+    }
+    
+    .hero-buttons {
+        flex-direction: column;
+    }
+    
+    .hero-buttons a {
         width: 100%;
         text-align: center;
+    }
+    
+    .cards,
+    .mvv-container,
+    .contact-info {
+        grid-template-columns: 1fr;
     }
     
     .galerie {
         grid-template-columns: 1fr;
     }
     
+    .galerie img {
+        height: 200px;
+    }
+    
     form {
         padding: 1.5rem;
     }
     
-    .cards {
-        grid-template-columns: 1fr;
-    }
-    
-    .contact-info {
-        grid-template-columns: 1fr;
-    }
-    
-    /* FOOTER MOBILE */
     .footer-content {
         grid-template-columns: 1fr;
         text-align: center;
@@ -718,86 +860,11 @@ footer a:hover {
     footer {
         padding: 2rem 1.2rem 1rem;
     }
-    
-    footer h3 {
-        margin-top: 0.5rem;
-    }
-}
-    
-    .logo {
-        height: 50px;
-    }
-    
-    nav ul {
-        flex-direction: column;
-        text-align: center;
-        gap: 0.5rem;
-        width: 100%;
-    }
-    
-    nav a {
-        display: block;
-        padding: 0.5rem;
-    }
-    
-    .hero {
-        padding: 4rem 1rem;
-    }
-    
-    .hero h1 {
-        font-size: 2rem;
-    }
-    
-    .devise {
-        font-size: 1.2rem;
-    }
-    
-    .slogan {
-        font-size: 1rem;
-    }
-    
-    .page-header {
-        padding: 3rem 1rem;
-    }
-    
-    .page-header h1 {
-        font-size: 1.8rem;
-    }
-    
-    section {
-        padding: 3rem 1rem;
-    }
-    
-    section h2 {
-        font-size: 1.6rem;
-    }
-    
-    .content {
-        padding: 2rem 1rem;
-    }
-    
-    .content h2 {
-        font-size: 1.5rem;
-    }
-    
-    .cta {
-        padding: 2rem 1rem;
-    }
-    
-    .cta a {
-        display: block;
-        margin: 0.5rem 0;
-    }
-    
-    .galerie {
-        grid-template-columns: 1fr;
-    }
-    
-    form {
-        padding: 1.5rem;
-    }
 }
 
+/* --------------------------------------------
+   20. RESPONSIVE - PETIT MOBILE
+   -------------------------------------------- */
 @media (max-width: 480px) {
     .hero h1 {
         font-size: 1.6rem;
@@ -805,7 +872,14 @@ footer a:hover {
     
     .devise {
         font-size: 1rem;
-        letter-spacing: 1px;
+    }
+    
+    .page-header h1 {
+        font-size: 1.5rem;
+    }
+    
+    section h2 {
+        font-size: 1.3rem;
     }
     
     .btn-primary,
@@ -815,141 +889,8 @@ footer a:hover {
         width: 100%;
         text-align: center;
         margin: 0.5rem 0;
+        padding: 0.9rem 1.5rem;
     }
-}
-
-/* --------------------------------------------
-   19. UTILITAIRES
-   -------------------------------------------- */
-.text-center {
-    text-align: center;
-}
-
-.mt-1 { margin-top: 1rem; }
-.mt-2 { margin-top: 2rem; }
-.mb-1 { margin-bottom: 1rem; }
-.mb-2 { margin-bottom: 2rem; }
-
-.highlight {
-    color: var(--vert);
-    font-weight: bold;
-}
-
-/* --------------------------------------------
-   20. ANIMATIONS
-   -------------------------------------------- */
-@keyframes fadeIn {
-    from {
-        opacity: 0;
-        transform: translateY(20px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-
-.hero h1,
-.hero .devise,
-.hero .slogan {
-    animation: fadeIn 1s ease-out;
-}
-
-.card {
-    animation: fadeIn 0.6s ease-out;
-}
-/* --------------------------------------------
-   BOÎTE DE DON / BÉNÉVOLAT / PARTENARIAT
-   -------------------------------------------- */
-.don-box {
-    background: var(--gris-clair);
-    padding: 2rem;
-    border-radius: var(--radius);
-    margin: 1.5rem 0;
-    border-left: 5px solid var(--vert);
-}
-
-.don-box h4 {
-    color: var(--bleu-fonce);
-    font-size: 1.2rem;
-    margin-bottom: 1rem;
-}
-
-.don-box p {
-    margin-bottom: 0.5rem;
-    text-align: left;
-}
-
-.don-box ul {
-    margin-left: 1.5rem;
-    margin-bottom: 1.5rem;
-}
-
-.don-box li {
-    margin-bottom: 0.5rem;
-}
-
-.don-box .btn-primary {
-    margin-top: 1rem;
-}
-
-.share-box {
-    background: var(--bleu-fonce);
-    color: var(--blanc);
-    padding: 1.5rem;
-    border-radius: var(--radius);
-    text-align: center;
-    margin: 1.5rem 0;
-}
-
-.share-box a {
-    color: var(--blanc);
-    text-decoration: underline;
-    font-weight: bold;
-}
-
-.share-box a:hover {
-    color: #FFD700;
-   }
-/* --------------------------------------------
-   FAQ - ACCORDÉON
-   -------------------------------------------- */
-.faq-item {
-    background: var(--gris-clair);
-    border-radius: var(--radius);
-    margin-bottom: 1rem;
-    overflow: hidden;
-    border-left: 5px solid var(--vert);
-    transition: var(--transition);
-}
-
-.faq-item:hover {
-    box-shadow: var(--ombre);
-}
-
-.faq-question {
-    padding: 1.5rem;
-    font-weight: 700;
-    color: var(--bleu-fonce);
-    cursor: pointer;
-    font-size: 1.1rem;
-    transition: var(--transition);
-}
-
-.faq-question:hover {
-    background: var(--gris-moyen);
-}
-
-.faq-answer {
-    padding: 0 1.5rem 1.5rem;
-    color: var(--texte);
-    font-size: 1rem;
-    line-height: 1.7;
-    display: none;
-}
-
-.faq-item:hover .faq-answer {
-    display: block;
 }
 
 /* --------------------------------------------
