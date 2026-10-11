@@ -163,6 +163,7 @@ nav a.active::after {
     margin-bottom: 0.5rem;
     line-height: 1.2;
 }
+
 /* Logo géant sur la page d'accueil */
 .hero-logo {
     width: 150px;
@@ -749,7 +750,7 @@ footer a:hover {
 .mb-2 { margin-bottom: 2rem; }
 
 /* --------------------------------------------
-   19. RESPONSIVE - TABLETTE
+   19. RESPONSIVE - MOBILE (max 768px)
    -------------------------------------------- */
 @media (max-width: 768px) {
     nav {
@@ -758,9 +759,9 @@ footer a:hover {
     }
     
     .logo {
-    height: 65px;
-    width: 65px;
-}
+        height: 65px;
+        width: 65px;
+    }
     
     .menu-toggle {
         display: block;
@@ -805,6 +806,12 @@ footer a:hover {
     
     .hero {
         padding: 3rem 1.5rem;
+    }
+    
+    .hero-logo {
+        width: 110px;
+        height: 110px;
+        border-width: 4px;
     }
     
     .hero h1 {
@@ -860,14 +867,19 @@ footer a:hover {
         text-align: center;
     }
     
+    /* ⚠️ FORCER 1 COLONNE SUR MOBILE */
     .cards,
     .mvv-container,
-    .contact-info {
-        grid-template-columns: 1fr;
+    .contact-info,
+    .contact-grid,
+    .domaines-grid,
+    .pourquoi-list {
+        grid-template-columns: 1fr !important;
+        gap: 1.2rem !important;
     }
     
     .galerie {
-        grid-template-columns: 1fr;
+        grid-template-columns: 1fr !important;
     }
     
     .galerie img {
@@ -879,7 +891,7 @@ footer a:hover {
     }
     
     .footer-content {
-        grid-template-columns: 1fr;
+        grid-template-columns: 1fr !important;
         text-align: center;
         gap: 1.5rem;
     }
@@ -890,17 +902,131 @@ footer a:hover {
 }
 
 /* --------------------------------------------
-   20. RESPONSIVE - PETIT MOBILE
+   19.5. RESPONSIVE - TABLETTE (769px à 1024px)
+   -------------------------------------------- */
+@media (min-width: 769px) and (max-width: 1024px) {
+    nav {
+        padding: 1rem 1.5rem;
+    }
+    
+    .logo {
+        height: 70px;
+        width: 70px;
+    }
+    
+    nav ul {
+        gap: 1rem;
+    }
+    
+    nav a {
+        font-size: 0.9rem;
+    }
+    
+    .hero {
+        padding: 4rem 2rem;
+    }
+    
+    .hero-content {
+        max-width: 700px;
+    }
+    
+    .hero-logo {
+        width: 120px;
+        height: 120px;
+    }
+    
+    .hero h1 {
+        font-size: 2.4rem;
+    }
+    
+    .devise {
+        font-size: 1.2rem;
+    }
+    
+    .slogan {
+        font-size: 1rem;
+    }
+    
+    section {
+        padding: 3rem 1.5rem;
+    }
+    
+    section h2 {
+        font-size: 1.8rem;
+    }
+    
+    /* 2 colonnes sur tablette */
+    .cards,
+    .mvv-container,
+    .domaines-grid,
+    .pourquoi-list,
+    .contact-info,
+    .contact-grid {
+        grid-template-columns: repeat(2, 1fr) !important;
+        gap: 1.5rem !important;
+    }
+    
+    .card,
+    .mvv-card,
+    .domaine-card {
+        padding: 1.8rem !important;
+    }
+    
+    .card h3,
+    .mvv-card h3,
+    .domaine-card h3 {
+        font-size: 1.15rem;
+    }
+    
+    .galerie {
+        grid-template-columns: repeat(2, 1fr) !important;
+        gap: 1rem !important;
+    }
+    
+    .galerie img {
+        height: 220px;
+    }
+    
+    .cta {
+        padding: 3rem 2rem;
+    }
+    
+    .cta h2 {
+        font-size: 1.8rem;
+    }
+    
+    .content {
+        padding: 2.5rem 1.5rem;
+    }
+    
+    .content h2 {
+        font-size: 1.5rem;
+    }
+    
+    form {
+        max-width: 500px;
+    }
+    
+    .footer-content {
+        grid-template-columns: repeat(2, 1fr) !important;
+        gap: 2rem;
+        text-align: left;
+    }
+}
+
+/* --------------------------------------------
+   20. RESPONSIVE - PETIT MOBILE (max 480px)
    -------------------------------------------- */
 @media (max-width: 480px) {
     .hero h1 {
         font-size: 1.6rem;
     }
-   .hero-logo {
-    width: 110px;
-    height: 110px;
-    border-width: 4px;
-}
+    
+    .hero-logo {
+        width: 110px;
+        height: 110px;
+        border-width: 4px;
+    }
     
     .devise {
         font-size: 1rem;
