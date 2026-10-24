@@ -12,20 +12,19 @@
 
 <header>
     <nav>
-    <nav>
-    <a href="index.html">
-        <img src="assets/images/logo.png" alt="Logo LV/ONGD" class="logo">
-    </a>
-    <button class="menu-toggle" onclick="toggleMenu()" aria-label="Menu">☰</button>
-    <ul id="menu">
-        <li><a href="index.html">Accueil</a></li>
-        <li><a href="qui-sommes-nous.html">Qui sommes-nous ?</a></li>
-        <li><a href="nos-actions.html">Nos Actions</a></li>
-        <li><a href="nous-soutenir.html">Nous Soutenir</a></li>
-        <li><a href="faq.html">FAQ</a></li>
-        <li><a href="contact.html">Contact</a></li>
-    </ul>
-                                                                    </nav>
+        <a href="index.html"><img src="assets/images/logo.png" alt="Logo LV/ONGD" class="logo"></a>
+        <button class="menu-toggle" onclick="toggleMenu()" aria-label="Menu">☰</button>
+        <ul id="menu">
+            <li><a href="index.html">Accueil</a></li>
+            <li><a href="qui-sommes-nous.html">Qui sommes-nous ?</a></li>
+            <li><a href="nos-actions.html" class="active">Nos Actions</a></li>
+            <li><a href="nous-soutenir.html">Nous Soutenir</a></li>
+            <li><a href="documents.html">Documents</a></li>
+            <li><a href="ressources.html">Ressources</a></li>
+            <li><a href="faq.html">FAQ</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+    </nav>
 </header>
 
 <section class="page-header">
@@ -72,10 +71,10 @@
     <p>Découvrez en images nos actions sur le terrain.</p>
 
     <div class="galerie">
-        <img src="assets/images/galerie/action-01.jpg" alt="Action de reboisement">
-        <img src="assets/images/galerie/action-02.jpg" alt="Sensibilisation dans les écoles">
-        <img src="assets/images/galerie/action-03.jpg" alt="Journée de nettoyage">
-        <img src="assets/images/galerie/action-04.jpg" alt="Plantation d'arbres">
+        <img src="assets/images/galerie/action-01.jpg" alt="Président-Fondateur devant la banderole">
+        <img src="assets/images/galerie/action-02.jpg" alt="Signature officielle des documents">
+        <img src="assets/images/galerie/action-03.jpg" alt="M. Ngandu signant un document">
+        <!-- Vous ajouterez les autres photos ici plus tard -->
     </div>
 
     <p class="text-center mt-2">
@@ -91,22 +90,12 @@
 
 <footer>
     <div class="footer-content">
-        <div>
-            <h3>LV/ONGD</h3>
-            <p>ONG Lamentation Végétale</p>
-            <p><em>Éveiller • Former • Agir</em></p>
-        </div>
-        <div>
-            <h3>Liens Rapides</h3>
-            <p><a href="index.html">Accueil</a></p>
-            <p><a href="qui-sommes-nous.html">Qui sommes-nous ?</a></p>
-            <p><a href="nos-actions.html">
-    </footer>
-    <script>
-function toggleMenu() {
-    document.getElementById('menu').classList.toggle('active');
-}
-    </script>
-
+        <div><h3>LV/ONGD</h3><p>ONG Lamentation Végétale</p><p><em>Éveiller • Former • Agir</em></p></div>
+        <div><h3>Liens Rapides</h3><p><a href="index.html">Accueil</a></p><p><a href="qui-sommes-nous.html">Qui sommes-nous ?</a></p><p><a href="documents.html">Documents Officiels</a></p><p><a href="ressources.html">Ressources</a></p></div>
+        <div><h3>Contact</h3><p>📧 ongdlamentationvegetale@gmail.com</p><p>📞 +243 833 388 928</p></div>
+    </div>
+    <p class="copyright">© 2026 ONG Lamentation Végétale — Tous droits réservés</p>
+</footer>
+<script>function toggleMenu() { document.getElementById('menu').classList.toggle('active'); }</script>
 </body>
 </html>
