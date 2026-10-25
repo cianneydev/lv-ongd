@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <url><loc>https://lvongd-website.vercel.app/</loc><priority>1.0</priority></url>
+  <url><loc>https://lvongd-website.vercel.app/qui-sommes-nous.html</loc><priority>0.8</priority></url>
+  <url><loc>https://lvongd-website.vercel.app/nos-actions.html</loc><priority>0.8</priority></url>
+  <url><loc>https://lvongd-website.vercel.app/nous-soutenir.html</loc><priority>0.8</priority></url>
+  <url><loc>https://lvongd-website.vercel.app/documents.html</loc><priority>0.7</priority></url>
+  <url><loc>https://lvongd-website.vercel.app/ressources.html</loc><priority>0.7</priority></url>
+  <url><loc>https://lvongd-website.vercel.app/faq.html</loc><priority>0.6</priority></url>
+  <url><loc>https://lvongd-website.vercel.app/contact.html</loc><priority>0.6</priority></url>
+</urlset>
