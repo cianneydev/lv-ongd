@@ -96,9 +96,22 @@
     </div>
     <p class="copyright">© 2026 ONG Lamentation Végétale — Tous droits réservés</p>
 </footer>
-<!-- Bibliothèque GLightbox pour l'effet zoom -->
+<!-- Bibliothèque GLightbox -->
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/glightbox/dist/css/glightbox.min.css" />
 <script src="https://cdn.jsdelivr.net/npm/glightbox/dist/js/glightbox.min.js"></script>
+
+<!-- Votre script de menu -->
 <script src="assets/js/script.js"></script>
+
+<!-- Activation de la Lightbox -->
+<script>
+    const lightbox = GLightbox({
+        selector: '.galerie img',
+        touchNavigation: true,  // Permet de glisser pour passer à la photo suivante sur mobile
+        loop: true,             // Revient au début après la dernière photo
+        zoomable: true,         // PERMET LE ZOOM MANUEL (l'utilisateur pince pour zoomer, ce n'est pas automatique)
+        draggable: true         // Permet de déplacer la photo une fois zoomée
+    });
+</script>
 </body>
 </html>
